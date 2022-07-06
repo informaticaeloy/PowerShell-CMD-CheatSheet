@@ -1,0 +1,2 @@
+ Get-InboxRule -Mailbox <mail del usuario>
+ Get-InboxRule -Mailbox <mail del usuario> | select -Property *
