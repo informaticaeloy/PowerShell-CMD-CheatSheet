@@ -1,4 +1,4 @@
-PS C:\Windows\system32> get-mailbox | Get-MailboxFolderStatistics | Where-Object {$_.name -like "Archivos"} | select identity, Foldersize, storagequota
+PS C:\Windows\system32> get-mailbox | Get-MailboxFolderStatistics | Where-Object {$_.name -like "Archivos"} | Select identity, Foldersize, storagequota
 
 ## Salida:
 ## Identity              FolderSize    StorageQuota
