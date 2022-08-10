@@ -2,6 +2,7 @@
 # Este servicio permite conectarnos a equipos remotos para cambiar, eliminar o agregar claves y valores de registro,
 # el cual nos permite conectarnos directamente a las estructuras de registro en otro ordenador usando regedit.
 
+#######################################################################################################################
 # Activar el autoarranque del servicio 
 sc \\<NombreDeEquipo_o_IP> config remoteregistry start= auto
 
@@ -9,6 +10,7 @@ sc \\<NombreDeEquipo_o_IP> config remoteregistry start= auto
 C:\Users\usuario>sc \\PC-INF019 config remoteregistry start= auto
 [SC] ChangeServiceConfig CORRECTO
 
+#######################################################################################################################
 # Arrancar el servicio
 sc \\<NombreDeEquipo_o_IP> start remoteregistry
 
@@ -22,6 +24,7 @@ sc \\<NombreDeEquipo_o_IP> start remoteregistry
 #         PUNTO_COMPROB.     : 0x2
 #         INDICACIÓN_INICIO  : 0xbb8
         
+#######################################################################################################################        
 # Para el servicio
 sc \\<NombreDeEquipo_o_IP> stop remoteregistry
 
