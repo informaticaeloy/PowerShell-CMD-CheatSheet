@@ -1,7 +1,7 @@
 # en local
 Get-CimInstance -Class Win32_OperatingSystem | select LastBootUpTime
 # en remoto
-Get-CimInstance -Class Win32_OperatingSystem -ComputerName "inf-iherrero"  | select LastBootUpTime
+Get-CimInstance -Class Win32_OperatingSystem -ComputerName "NOMBRE_EQUIPO"  | select LastBootUpTime
 
 # Ejemplo
 PS C:\Windows\system32> Get-CimInstance -Class Win32_OperatingSystem | select LastBootUpTime
