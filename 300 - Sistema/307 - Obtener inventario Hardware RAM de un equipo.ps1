@@ -1,7 +1,11 @@
 # Información sobre la memoria RAM instalada
 
 # TODA LA INFORMACIÓN DE LA MEMORIA #######################################################################################################
+###########################################################################################################################################
+## en local
 Get-CimInstance -ClassName Win32_PhysicalMemory
+## en remoto
+Get-CimInstance -ClassName Win32_PhysicalMemory -ComputerName "NOMBRE_EQUIPO"
 
 # Ejemplo
 # PS C:\Windows\system32> Get-CimInstance -ClassName Win32_PhysicalMemory
@@ -46,7 +50,11 @@ TypeDetail           : 128
 PSComputerName       :
 
 # FILTRO DEL FABRICANTE, ZÓCALO FÍSICO DONDE ESTÁ PICHADA Y CAPACIDAD #####################################################################
+###########################################################################################################################################
+## en local
 Get-CimInstance -ClassName Win32_PhysicalMemory | select Manufacturer, BankLabel, Capacity
+## en remoto
+Get-CimInstance -ClassName Win32_PhysicalMemory -ComputerName "NOMBRE_EQUIPO" | select Manufacturer, BankLabel, Capacity 
 
 # Ejemplo
 #PS C:\Windows\system32> Get-CimInstance -ClassName Win32_PhysicalMemory | select Manufacturer, BankLabel, Capacity
@@ -58,8 +66,16 @@ Samsung      BANK 1    8589934592
 Crucial      BANK 3    8589934592
 
 # FILTRO DEL FABRICANTE, ZÓCALO FÍSICO DONDE ESTÁ PICHADA, CAPACIDAD, PARTNUMBER Y NÚMERO DE SERIE #########################################
+############################################################################################################################################
+## en local
+Get-CimInstance -ClassName Win32_PhysicalMemory | select Manufacturer, BankLabel, Capacity, Speed, PartNumber, SerialNumber | FT
+## en remoto
+Get-CimInstance -ClassName Win32_PhysicalMemory -ComputerName "NOMBRE_EQUIPO" | select Manufacturer, BankLabel, Capacity, Speed, PartNumber, SerialNumber | FT
+
+# Ejemplo
 PS C:\Windows\system32> Get-CimInstance -ClassName Win32_PhysicalMemory | select Manufacturer, BankLabel, Capacity, Speed, PartNumber, SerialNumber | FT
 
+# OUTPUT
 Manufacturer BankLabel   Capacity Speed PartNumber           SerialNumber
 ------------ ---------   -------- ----- ----------           ------------
 Samsung      BANK 1    8589934592  3200 M378A1K43EB2-CWE     31FAKE8B
