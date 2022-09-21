@@ -43,3 +43,20 @@ sc \\<NombreDeEquipo_o_IP> stop remoteregistry
 #         INDICACIÓN_INICIO  : 0xbb8
 #         PID                : 11584
 #         MARCAS         :
+
+#######################################################################################################################        
+# Consultar el estado del servicio 
+sc \\<NombreDeEquipo_o_IP> query remoteregistry 
+
+#######################################################################################################################        
+EN LOCAL -->>
+#######################################################################################################################        
+# Arrancar el servicio
+sc start remoteregistry
+# Para el servicio
+sc stop remoteregistry
+# Activar el autoarranque del servicio 
+sc config remoteregistry start= auto
+# Consultar el estado del servicio 
+sc query remoteregistry 
+
