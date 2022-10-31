@@ -1,0 +1,55 @@
+### Listar impresoras por CMD de forma remota:
+
+Vamos a la ruta siguiente:
+
+```shell
+C:\Windows\System32\Printing_Admin_Scripts\es-ES\
+```
+
+Ejecutamos el comando:
+
+```shell
+cscript prnmngr.vbs -l -s NOMBREPC -u NOMBREPCUSUARIO -w PASSWORD
+```
+
+
+Con -l se listan todas las impresoras
+
+Aquí un pantallazo de la ayuda del script:
+
+```shell
+C:\Windows\System32\Printing_Admin_Scripts\es-ES>cscript prnmngr.vbs
+Microsoft (R) Windows Script Host versión 5.812
+Copyright (C) Microsoft Corporation. Reservados todos los derechos.
+
+Uso: prnmngr [-adxgtl?][c] [-s servidor][-p impresora][-m modelo controlador]
+               [-r puerto][-u nombre usuario][-w contarseña]
+Argumentos:
+-a     - agregar impresora local
+-ac    - agregar conexión de impresora
+-d     - eliminar impresora
+-g     - obtener la impresora predeterminada
+-l     - listar impresoras
+-m     - modelo del controlador
+-p     - nombre de la impresora
+-r     - nombre del puerto
+-s     - nombre del sevidor
+-t     - establecer la impresora predeterminada
+-u     - nombre de usuario
+-w     - contraseña
+-x     - eliminar todas las impresoras
+-xc    - eliminar todas las conexiones de impresoras
+-xo    - eliminar todas las impresoras locales
+-?     - muestra el uso del comando
+
+Ejemplos:
+prnmngr -a -p "impresora" -m "controlador" -r "lpt1:"
+prnmngr -d -p "impresora" -s servidor
+prnmngr -ac -p "\\servidor\impresora"
+prnmngr -d -p "\\servidor\impresora"
+prnmngr -x -s servidor
+prnmngr -xo
+prnmngr -l -s servidor
+prnmngr -g
+prnmngr -t -p "\\servidor\impresora"
+```
