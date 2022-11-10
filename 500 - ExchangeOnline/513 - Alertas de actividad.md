@@ -1,6 +1,6 @@
 ### Creación de alertas de actividad en Exchange Online
 
-El siguiente post muestra cómo crear dos alertas con PowerShell en Exchange online para recibir notificaciones por mail cada vez que un usuario de nuestra organización cree una regla en su buzón usando OWA
+El siguiente post muestra cómo crear alertas en Exchange Online, agregándolas con PowerShell, para recibir notificaciones por mail cada vez que un usuario de nuestra organización cree o modifique una regla en su buzón usando OWA
 
 Sería interesante monitorizar estas alertas, ya que uno de los primeros pasos de un ciberdelincuente cuando compromete una cuenta es crear reglas para reenviar correos a otra cuenta, marcar como leídos los mails que llegan o incluso borrar ciertos mensajes para evitar ser detectados mientras usan nuestro buzón.
 
