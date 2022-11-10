@@ -6,7 +6,7 @@ Sería interesante monitorizar estas alertas, ya que uno de los primeros pasos d
 
 * ⚠ IMPORTANTE: Las alertas de actividad han sido ya declaradas obsoletas dentro del panel de Office 365 y Exchange Online
 
-> Referencia: https://learn.microsoft.com/en-us/microsoft-365/compliance/create-activity-alerts?view=o365-worldwide
+> 📃 Referencia: https://learn.microsoft.com/en-us/microsoft-365/compliance/create-activity-alerts?view=o365-worldwide
 
 > Activity alerts are being deprecated. We recommend that you start using alert policies in the security and compliance center instead of creating new activity alerts. Alert policies provide additional functionality such as the ability to create an alert policy that triggers an alert when any user performs a specified activity, and displaying alerts on the View alerts page in the security and compliance center. For more information, see Alert policies.
 
@@ -14,11 +14,11 @@ Las alertas de actividad no es posible crearlas actualmente a través de entorno
 
 Para ello, en primer lugar deberemos conectarnos al centro de seguridad y cumplimiento
 
-1- Ejecuta PowerShell ISE como administrador
+1- :computer: Ejecuta PowerShell ISE como administrador
 
 2- Ahora conéctate al centro de seguridad y cumplimiento siguiendo los pasos indicados en el artículo
 
-> https://learn.microsoft.com/en-us/powershell/exchange/connect-to-scc-powershell?view=exchange-ps
+> 📃 https://learn.microsoft.com/en-us/powershell/exchange/connect-to-scc-powershell?view=exchange-ps
 
 O si conoces su manejo, con el siguiente comando:
 
