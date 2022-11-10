@@ -44,6 +44,9 @@ Una vez creadas podrá visualizarlas aquí:
 
 > :globe_with_meridians: https://compliance.microsoft.com/alertpolicies
 
+<kbd>![image](https://user-images.githubusercontent.com/20743678/201100826-49c70b6f-45da-4c1c-9f56-1a36b5bd0c76.png)</kbd>
+
+<kbd>![image](https://user-images.githubusercontent.com/20743678/201101490-13775871-125d-4ee2-adf1-34b4b4780891.png)</kbd>
 
 Por último y dado que estas alertas están basadas en los registros de auditoría, es importante comprobar que los registros de auditoría están habilitados en la organización y que puedes ver esas actividades registradas en ellos.
 
@@ -60,6 +63,8 @@ set-AdminAuditLogConfig -unifiedauditlogingestionenabled $true
 <kbd>![image](https://user-images.githubusercontent.com/20743678/201099652-48c2b50b-9a83-4ab4-ae92-d0202d678919.png)</kbd>
 
 Puedes revisar estas actividades a través de entorno gráfico en Auditar, dentro de Microsoft Purview
+
+<kbd>![image](https://user-images.githubusercontent.com/20743678/201102651-b2e5e93a-8b84-4701-b44c-c058b60fc013.png)</kbd>
 
 O bien a través de powershell
 
@@ -98,3 +103,7 @@ Import-Module ExchangeOnlineManagement
 ```shell
 Connect-ExchangeOnline -UserPrincipalName user@domain.com -ShowProgress $true 
 ```
+
+Y ya sólo nos queda esperar a que nos lleguen las alertas a nuestro correo electrónico indicado anteriormente para este fin:
+
+<kbd>![image](https://user-images.githubusercontent.com/20743678/201106028-0c32f47d-6115-4da0-94ed-000ec53427fc.png)</kbd>
