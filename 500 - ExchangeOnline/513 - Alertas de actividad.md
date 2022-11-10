@@ -49,7 +49,7 @@ Por último y dado que estas alertas están basadas en los registros de auditor�
 
 > 📃 https://learn.microsoft.com/en-us/microsoft-365/compliance/turn-audit-log-search-on-or-off?view=o365-worldwide
 
-<kbd>![image](https://user-images.githubusercontent.com/20743678/201095758-cf87b8f2-d320-47f6-b5a6-d71de03421d8.png)</kbd>
+<kbd>![image](https://user-images.githubusercontent.com/20743678/201099354-9dba0c10-d644-40f8-99b2-49d59396ea76.png)</kbd>
 
 Si no los tenemos habilitados, podemos hacerlo con el comando:
 
