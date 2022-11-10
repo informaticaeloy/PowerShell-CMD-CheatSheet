@@ -38,20 +38,28 @@ New-ProtectionAlert -Name "ModificacionRegla" -NotifyUser user@domain.com -Threa
 
 Documentación oficial del comando
 
-https://learn.microsoft.com/en-us/powershell/module/exchange/new-protectionalert?view=exchange-ps
+> 📃 https://learn.microsoft.com/en-us/powershell/module/exchange/new-protectionalert?view=exchange-ps
 
 Una vez creadas podrá visualizarlas aquí:
 
-https://compliance.microsoft.com/alertpolicies
+> :globe_with_meridians: https://compliance.microsoft.com/alertpolicies
 
 
 Por último y dado que estas alertas están basadas en los registros de auditoría, es importante comprobar que los registros de auditoría están habilitados en la organización y que puedes ver esas actividades registradas en ellos.
 
-> https://learn.microsoft.com/en-us/microsoft-365/compliance/turn-audit-log-search-on-or-off?view=o365-worldwide
+> 📃 https://learn.microsoft.com/en-us/microsoft-365/compliance/turn-audit-log-search-on-or-off?view=o365-worldwide
 
-Puede revisar estas actividades a través de entorno gráfico
+<kbd>![image](https://user-images.githubusercontent.com/20743678/201095758-cf87b8f2-d320-47f6-b5a6-d71de03421d8.png)</kbd>
 
-Auditar, dentro de Microsoft Purview
+Si no los tenemos habilitados, podemos hacerlo con el comando:
+
+´´´´shell
+set-AdminAuditLogConfig -unifiedauditlogingestionenabled $true
+```
+
+</kbd>![image](https://user-images.githubusercontent.com/20743678/201096290-d186265a-e07f-4dd0-a20d-25e7e577016f.png)</kbd>
+
+Puedes revisar estas actividades a través de entorno gráfico en Auditar, dentro de Microsoft Purview
 
 O bien a través de powershell
 
@@ -59,31 +67,31 @@ O bien a través de powershell
 Search-UnifiedAuditLog -StartDate 2022/11/02 -EndDate 2022/11/03 -Operations New-InboxRule
 ```
 
-> https://learn.microsoft.com/en-us/powershell/module/exchange/search-unifiedauditlog?view=exchange-ps
+> 📃 https://learn.microsoft.com/en-us/powershell/module/exchange/search-unifiedauditlog?view=exchange-ps
 
 Para ejecutar este último comando debes estar conectado a Exchange On Line. Si no lo has hecho anteriormente , sigue estos pasos:
 
-1-Ejecuta Powershell ISE como administrador
+1- :computer: Ejecuta Powershell ISE como administrador
 
-2-Ejecuta (Haz clic en "sí a todo")
+2- :computer: Ejecuta (Haz clic en "sí a todo")
 
 ```shell
 Set-executionPolicy remotesigned 
 ```
 
-3-Ejecuta (Para instalar el módulo)
+3- :computer: Ejecuta (Para instalar el módulo)
 
 ```shell
 Install-Module -Name ExchangeOnlineManagement -RequiredVersion 2.0.3
 ```
 
-4-Ejecuta (Para importar el módulo)
+4- :computer: Ejecuta (Para importar el módulo)
 
 ```shell
 Import-Module ExchangeOnlineManagement 
 ```
 
-5-Ejecuta (Indica la cuenta de Administrador Global)
+5- :computer: Ejecuta (Indica la cuenta de Administrador Global)
 
 ```shell
 Connect-ExchangeOnline -UserPrincipalName user@domain.com -ShowProgress $true 
