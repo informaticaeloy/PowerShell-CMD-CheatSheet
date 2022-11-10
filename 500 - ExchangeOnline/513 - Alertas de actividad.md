@@ -53,11 +53,11 @@ Por último y dado que estas alertas están basadas en los registros de auditor�
 
 Si no los tenemos habilitados, podemos hacerlo con el comando:
 
-´´´´shell
+```shell
 set-AdminAuditLogConfig -unifiedauditlogingestionenabled $true
 ```
 
-</kbd>![image](https://user-images.githubusercontent.com/20743678/201096290-d186265a-e07f-4dd0-a20d-25e7e577016f.png)</kbd>
+<kbd>![image](https://user-images.githubusercontent.com/20743678/201096290-d186265a-e07f-4dd0-a20d-25e7e577016f.png)</kbd>
 
 Puedes revisar estas actividades a través de entorno gráfico en Auditar, dentro de Microsoft Purview
 
@@ -66,6 +66,8 @@ O bien a través de powershell
 ```shell
 Search-UnifiedAuditLog -StartDate 2022/11/02 -EndDate 2022/11/03 -Operations New-InboxRule
 ```
+
+<kbd>![image](https://user-images.githubusercontent.com/20743678/201098912-5929430d-f900-4047-a4d0-52d00b4f225c.png)</kbd>
 
 > 📃 https://learn.microsoft.com/en-us/powershell/module/exchange/search-unifiedauditlog?view=exchange-ps
 
