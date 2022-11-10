@@ -57,7 +57,7 @@ Si no los tenemos habilitados, podemos hacerlo con el comando:
 set-AdminAuditLogConfig -unifiedauditlogingestionenabled $true
 ```
 
-<kbd>![image](https://user-images.githubusercontent.com/20743678/201096290-d186265a-e07f-4dd0-a20d-25e7e577016f.png)</kbd>
+<kbd>![image](https://user-images.githubusercontent.com/20743678/201099652-48c2b50b-9a83-4ab4-ae92-d0202d678919.png)</kbd>
 
 Puedes revisar estas actividades a través de entorno gráfico en Auditar, dentro de Microsoft Purview
 
