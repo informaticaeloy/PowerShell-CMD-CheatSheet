@@ -1,4 +1,4 @@
-$FILE = Get-Content "C:\pstools\lista001.txt"
+$FILE = Get-Content "C:\lista001.txt"
 $Tab = [char]9
 $PingOK = 0
 $PingNOK = 0
