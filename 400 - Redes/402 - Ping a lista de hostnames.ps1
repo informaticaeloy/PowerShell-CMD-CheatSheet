@@ -1,7 +1,8 @@
-$FILE = Get-Content "C:\lista001.txt"
+$FILE = Get-Content "C:\pstools\lista001.txt"
 $Tab = [char]9
 $PingOK = 0
 $PingNOK = 0
+Clear
 
 foreach ($LINE in $FILE) 
 {
@@ -20,6 +21,9 @@ foreach ($LINE in $FILE)
 		$PingNOK ++
 	}
 }
-Write-Host "🟢 ------>>>>> Lista terminada"
-Write-Host "👍 ------>>>>> Hosts UP"
-Write-Host "💥 ------>>>>> Hosts DOWN"
+Write-Host "🔵⚪ " -ForegroundColor Green -NoNewLine 
+Write-Host "------>>>>> Lista terminada"
+Write-Host "✔ ------>>>>> " -ForegroundColor Green -NoNewLine 
+Write-Host "$PingOK Hosts UP"
+Write-Host "❌ ------>>>>> " -ForegroundColor Red -NoNewLine 
+Write-Host "$PingNOK Hosts DOWN"
