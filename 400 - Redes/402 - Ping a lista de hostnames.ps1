@@ -22,7 +22,7 @@ foreach ($LINE in $FILE)
 	}
 }
 Write-Host "🔵⚪ " -ForegroundColor Green -NoNewLine 
-Write-Host "------>>>>> Lista terminada"
+Write-Host "---->>>>> Lista terminada"
 Write-Host "✔ ------>>>>> " -ForegroundColor Green -NoNewLine 
 Write-Host "$PingOK Hosts UP"
 Write-Host "❌ ------>>>>> " -ForegroundColor Red -NoNewLine 
