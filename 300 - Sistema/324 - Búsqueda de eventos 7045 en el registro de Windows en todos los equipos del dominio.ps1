@@ -24,18 +24,15 @@ $XPath = "*[ (EventData[Data[@Name='ServiceName']='uvnc_service'] or EventData[D
 
 foreach ($CADA_EQUIPO in $EQUIPOS_UO)
 { 
-    $i += 1
+    $i      += 1
     $result = $null
-    #Write-Host "$CADA_EQUIPO ($i de $num_equipos)" -ForegroundColor White -BackgroundColor Green
-    
-    
-    
+        
     if (Test-Connection $CADA_EQUIPO -Quiet)
     {
         Write-Host "✔ (equipo $i de $num_equipos) -> Ejectuando en : $CADA_EQUIPO"  -ForegroundColor White -BackgroundColor Green
         try
         {
-            $result = Get-WinEvent -ComputerName $CADA_EQUIPO -LogName System -FilterXPath $XPath | select Id, Timecreated, machinename, message | Format-List 
+            $result = Get-WinEvent -ComputerName $CADA_EQUIPO -LogName System -FilterXPath $XPath -ErrorAction Stop | select Id, Timecreated, machinename, message | Format-List 
         }
         catch
         {
