@@ -55,5 +55,8 @@ foreach ($LINE in $FILE)
       }
       Write-Host "+++++++++++++++++++++"
      } 
-     Write-Host "Ejectuando en : $LINE -> Parece que está apagado"
+     else
+     {
+            Write-Host "Ejectuando en : $LINE -> Parece que está apagado"
+     }
 }
