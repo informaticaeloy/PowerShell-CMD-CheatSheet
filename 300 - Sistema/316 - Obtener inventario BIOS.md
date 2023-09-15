@@ -6,7 +6,7 @@ Get-CimInstance -ClassName Win32_BIOS
 
 #### En remoto
 
-'''shell
+```shell
 Get-CimInstance -ClassName Win32_BIOS -ComputerName "NOMBRE_EQUIPO"
 ```
 
