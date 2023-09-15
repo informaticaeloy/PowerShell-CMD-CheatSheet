@@ -1,12 +1,20 @@
-# en local
-Get-CimInstance -ClassName Win32_BIOS
-# en remoto
-Get-CimInstance -ClassName Win32_BIOS -ComputerName "NOMBRE_EQUIPO"
+#### En local
 
-# Ejemplo
+```shell
+Get-CimInstance -ClassName Win32_BIOS
+```
+
+#### En remoto
+
+'''shell
+Get-CimInstance -ClassName Win32_BIOS -ComputerName "NOMBRE_EQUIPO"
+```
+
+#### Ejemplo
+
 PS C:\Windows\system32> Get-CimInstance -ClassName Win32_BIOS
 
-# OUTPUT
+#### OUTPUT
 
 SMBIOSBIOSVersion : M2T4DRDA
 Manufacturer      : LENOVO
