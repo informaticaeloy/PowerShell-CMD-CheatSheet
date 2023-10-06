@@ -1,13 +1,13 @@
 ```shell
 $equipos = Get-ADComputer -Filter * -SearchBase "OU=miunidadorganizativa,OU=miunidadorganizativapadre,DC=midominio,DC=loc" | select Name
+
 foreach ($equipo in $equipos){
-    #$equipo.name
-    #Start-Sleep -s 1
     if (Test-Connection $equipo.Name -Quiet){
-        try{
+        try
+        {
             $results = Invoke-Command -ComputerName $equipo.Name -ScriptBlock { Get-ItemProperty -Path 'HKLM:\SOFTWARE\WOW6432Node\TeamViewer\' -Name ClientID -ErrorAction SilentlyContinue }
             if ($results.ClientID -eq $NULL){
-                write-host $equipo.Name " *** ERROR - Key remota no encontrada en el registro"  
+                write-host $equipo.Name " *** ERROR - Key remota no encontrada en el registro (o está en otra ruta o no tiene Teamviewer instalado)" 
             }
             else{
                 write-host $equipo.Name " " $results.ClientID 
