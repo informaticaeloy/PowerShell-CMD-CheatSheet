@@ -14,6 +14,10 @@ manage-bde.exe -status <volume>
 manage-bde -status -cn <hostname>
 ```
 
+```shell
+manage-bde -status -cn 192.168.xxx.xxx
+```
+
 Si no indicamos nada en el parámetro <volume>, se mostrará el estado de todos los volúmenes
 
 ### Descifrado de volúmenes 
