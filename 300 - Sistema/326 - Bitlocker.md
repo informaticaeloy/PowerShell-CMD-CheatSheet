@@ -30,6 +30,10 @@ manage-bde.exe -off <volume>
 manage-bde -off -cn <hostname>
 ```
 
+```shell
+manage-bde -off -cn 192.168.xxx.xxx
+```
+
 ### Cifrado de volúmenes
 
 #### En el equipo local
@@ -42,4 +46,8 @@ manage-bde.exe -on <volume>
 
 ```shell
 manage-bde -off -cn <hostname>
+```
+
+```shell
+manage-bde -off -cn 192.168.xxx.xxx
 ```
