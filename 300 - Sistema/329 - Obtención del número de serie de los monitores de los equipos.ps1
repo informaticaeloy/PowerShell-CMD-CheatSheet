@@ -1,5 +1,9 @@
+### En local 
+gwmi WmiMonitorID -Namespace root\wmi | Select @{n="Serial Number";e={[System.Text.Encoding]::ASCII.GetString($_.SerialNumberID -ne 00)}}
 
-$equipos = Get-ADComputer -Filter * -SearchBase "OU=GJZUERA,DC=gj,DC=loc" | select Name
+
+## Para todos los equipos de tu AD
+$equipos = Get-ADComputer -Filter * -SearchBase "OU=tu_unidad_organizativa,DC=tu_dominio,DC=loc" | select Name
 
 foreach ($equipo in $equipos)
 {
