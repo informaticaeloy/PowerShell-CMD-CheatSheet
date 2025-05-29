@@ -13,20 +13,29 @@
 
 
 # Ejecutar como Administrador
-Write-Host "Analizando archivos en C:\Windows\Installer..." -ForegroundColor Cyan
+$shell = New-Object -ComObject Shell.Application
+$installerPath = "C:\Windows\Installer"
+$folder = $shell.Namespace($installerPath)
 
-# Obtener productos instalados y sus rutas locales
+$results = @()
+
+# Obtener productos instalados
 $products = Get-WmiObject -Class Win32_Product
 $usedFiles = $products | Where-Object { $_.LocalPackage } | Select-Object -ExpandProperty LocalPackage
 $usedFiles = $usedFiles | ForEach-Object { $_.ToLower() }
 
-# Obtener todos los archivos MSI/MSP
-$installerFiles = Get-ChildItem -Path "C:\Windows\Installer" -Filter *.ms* -Recurse
+# Función para obtener propiedad extendida por nombre
+function Get-ShellProperty {
+    param ($folder, $item, $propertyName)
+    for ($i = 0; $i -lt 266; $i++) {
+        if ($folder.GetDetailsOf($folder.Items, $i) -eq $propertyName) {
+            return $folder.GetDetailsOf($item, $i)
+        }
+    }
+    return "No disponible"
+}
 
-# Resultado
-$results = @()
-
-# Función para calcular el SHA256
+# Función para obtener SHA256
 function Get-FileSHA256($filePath) {
     try {
         $sha256 = [System.Security.Cryptography.SHA256]::Create()
@@ -39,42 +48,39 @@ function Get-FileSHA256($filePath) {
     }
 }
 
-foreach ($file in $installerFiles) {
-    $path = $file.FullName
-    $lowerPath = $path.ToLower()
+# Analizar cada archivo MSI/MSP
+Get-ChildItem -Path $installerPath -Filter *.ms* | ForEach-Object {
+    $file = $_
+    $item = $folder.ParseName($file.Name)
+
+    $fullPath = $file.FullName
+    $lowerPath = $fullPath.ToLower()
     $sizeMB = [Math]::Round($file.Length / 1MB, 2)
-    $creationTime = $file.CreationTime
-    $lastWrite = $file.LastWriteTime
     $status = if ($usedFiles -contains $lowerPath) { "EN USO" } else { "HUÉRFANO" }
 
-    try {
-        $versionInfo = [System.Diagnostics.FileVersionInfo]::GetVersionInfo($path)
-        $productName = if ($versionInfo.ProductName) { $versionInfo.ProductName } else { "No disponible" }
-        $productVersion = if ($versionInfo.ProductVersion) { $versionInfo.ProductVersion } else { "No disponible" }
-        $productCompany = if ($versionInfo.CompanyName) { $versionInfo.CompanyName } else { "No disponible" }
-    } catch {
-        $productName = "No disponible"
-        $productVersion = "No disponible"
-        $productCompany = "No disponible"
-    }
+    $title = Get-ShellProperty $folder $item "Título"
+    $author = Get-ShellProperty $folder $item "Autores"
+    $comments = Get-ShellProperty $folder $item "Comentarios"
 
-    $sha256 = Get-FileSHA256 -filePath $path
+    $creation = $file.CreationTime
+    $modification = $file.LastWriteTime
+    $sha256 = Get-FileSHA256 $fullPath
 
     $results += [PSCustomObject]@{
-        Ruta               = $path
+        Ruta               = $fullPath
         Tamaño_MB          = $sizeMB
         Estado             = $status
-        Fecha_Creación     = $creationTime
-        Fecha_Modificación = $lastWrite
-        Producto           = $productName
-        Versión            = $productVersion
-        Editor             = $productCompany
+        Fecha_Creación     = $creation
+        Fecha_Modificación = $modification
+        Título             = if ($title) { $title } else { "No disponible" }
+        Autor              = if ($author) { $author } else { "No disponible" }
+        Comentarios        = if ($comments) { $comments } else { "No disponible" }
         SHA256             = $sha256
     }
 }
 
-# Exportar resultados
-$csvPath = "$env:USERPROFILE\Desktop\installer_detallado_con_hash.csv"
+# Exportar a CSV
+$csvPath = "$env:USERPROFILE\Desktop\installer_metadatos_completos.csv"
 $results | Export-Csv -Path $csvPath -NoTypeInformation -Encoding UTF8
 
-Write-Host "Archivo generado: $csvPath" -ForegroundColor Green
+Write-Host "`n✅ Informe generado: $csvPath" -ForegroundColor Green
