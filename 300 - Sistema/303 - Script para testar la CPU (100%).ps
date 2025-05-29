@@ -1,0 +1,12 @@
+## En una sola línea
+for ($i=1;$i -le [Environment]::ProcessorCount;$i++) {Start-Job {while ($true){[Math]::Sqrt(987654)>0|Out-Null}}};$s=@("|","/","-","\");$i=0;while ($true){Write-Host -NoNewline "`r}:) Reventando la CPU $($s[$i++%$s.Length])";Start-Sleep -Milliseconds 200}
+
+## Con código de escape de continuación de línea
+for ($i=1; $i -le [Environment]::ProcessorCount; $i++) { `
+    Start-Job { while ($true) { [Math]::Sqrt(987654) -gt 0 | Out-Null } } `
+}; `
+$s = @("|","/","-","\"); $i = 0; `
+while ($true) { `
+    Write-Host -NoNewline "`r`: ) Reventando la CPU $($s[$i++ % $s.Length])"; `
+    Start-Sleep -Milliseconds 200 `
+}
