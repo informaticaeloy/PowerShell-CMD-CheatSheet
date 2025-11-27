@@ -26,11 +26,11 @@ foreach ($e in $eventos) {
 
     # Resaltado si es el último evento
     if ($e.RecordId -eq $ultimo) {
-        Write-Host "==========================" -BackgroundColor DarkGray
+        Write-Host "========================" -BackgroundColor DarkGray
         Write-Host "ÚLTIMO EVENTO REGISTRADO" -ForegroundColor White -BackgroundColor DarkGray
-        Write-Host "--------------------------" -BackgroundColor DarkGray
+        Write-Host "------------------------" -BackgroundColor DarkGray
     } else {
-        Write-Host "-----------------------------"
+        Write-Host "----------------------------------------------------------------------------------------------"
     }
 
     # Fecha/hora en cian
