@@ -1,0 +1,23 @@
+*****************************************
+HABILITAR LOOP-PROTECT PARA EL PUERTO 1/5
+*****************************************
+SW1-FAKE# config t
+SW1-FAKE(config)# loop-protect ethernet 1/5
+
+
+
+********************************************
+DESHABILITAR LOOP-PROTECT PARA EL PUERTO 1/5
+********************************************
+SW1-FAKE# config t
+SW1-FAKE(config)# no loop-protect ethernet 1/5
+
+
+
+*********************************************
+HABILITAR LOOP-PROTECT PARA TODOS LOS PUERTOS
+*********************************************
+SW1-FAKE# config t
+SW1-FAKE(config)# loop-protect ethernet 1/1-2/48
+SW1-FAKE(config)# loop-protect re-enable-timer 7200
+SW1-FAKE(config)# loop-protect action tx-rx-disable
