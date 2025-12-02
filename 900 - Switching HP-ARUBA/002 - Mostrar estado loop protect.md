@@ -1,3 +1,4 @@
+```bash
 SW1-SWITCHFAKE# sh loop-protect
 
 **********************************************
