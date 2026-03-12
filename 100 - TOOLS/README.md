@@ -4,6 +4,8 @@ Colección de scripts para administración de sistemas. Lo que no he podido enco
 
 | Herramienta         | Ruta                        | Nombre                 | Descripción                                |
 |:------------------- |:----------------------------| :----------------------| :------------------------------------------|
-| ⚡ Powershell      | 110 - Zabbix   | CSV to XML Zabbix Importer    | Script de PowerShell que convierte un archivo CSV con equipos en formato XML para importación masiva en Zabbix |
+| ⚡ Powershell      | [110 - Zabbix](https://github.com/informaticaeloy/PowerShell-CMD-CheatSheet/tree/dff4ee1454cb3b7cb75c52ca2a886e77ca423293/100%20-%20TOOLS/110%20-%20ZABBIX/111%20-%20CSV%20to%20XML%20Zabbix%20importer)   | CSV to XML Zabbix Importer    | Script de PowerShell que convierte un archivo CSV con equipos en formato XML para importación masiva en Zabbix |
 
 <img width="512" height="512" alt="image" src="https://github.com/user-attachments/assets/b5b31c03-9404-47dc-a6f4-528fb625d6c3" />
+
+
