@@ -7,8 +7,8 @@
 
 # Script para convertir CSV a XML de Zabbix
 
-$csvPath = ".\111 - CSV to XML Zabbix importer.csv"
-$xmlPath = ".\111 - CSV to XML Zabbix importer.xml"
+$csvPath = "c:\a\111 - CSV to XML Zabbix importer.csv"
+$xmlPath = "c:\a\111 - CSV to XML Zabbix importer.xml"
 
 # Definir la comunidad SNMP
 $SNMP_COMMUNITY = "public"
