@@ -5,6 +5,16 @@
 #  - Plantilla a aplicar en Zabbix (ha de existir en Zabbix)
 # Ver XML de ejemplo también (fichero '111 - CSV to XML Zabbix importer.xml')
 
+# Script para convertir CSV a XML de Zabbix
+$csvPath = ".\111 - CSV to XML Zabbix importer.csv"
+$xmlPath = ".\111 - CSV to XML Zabbix importer.xml"
+
+
+# Verificar que el archivo existe
+if (-not (Test-Path $csvPath)) {
+    Write-Host "ERROR: No se encuentra el archivo $csvPath" -ForegroundColor Red
+    exit 1
+}
 # Importar CSV
 try {
     $computers = Import-Csv -Path $csvPath -Delimiter ';' -Header @("nombre", "ip", "grupo", "plantilla") -Encoding UTF8
