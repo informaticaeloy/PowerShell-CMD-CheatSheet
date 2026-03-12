@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<zabbix_export>
+    <version>5.0</version>
+    <date>2026-03-12T16:40:57Z</date>
+    <groups>
+        <group>
+            <name>GRUPO DE APS TOKIO</name>
+        </group>
+
+    </groups>
+    <hosts>
+        <host>
+            <host>AP109_MUELLE1_TOKIO</host>
+            <name>AP109_MUELLE1_TOKIO</name>
+            <templates>
+                <template>
+                    <name>ICMP Ping</name>
+                </template>
+            </templates>
+            <groups>
+                <group>
+                    <name>GRUPO DE APS TOKIO</name>
+                </group>
+            </groups>
+            <interfaces>
+                <interface>
+                    <type>SNMP</type>
+                    <ip>10.10.30.187</ip>
+                    <dns>AP109MUELLE1TOKIO</dns>
+                    <port>161</port>
+                    <details>
+                        <community>public</community>
+                    </details>
+                    <interface_ref>if1</interface_ref>
+                </interface>
+            </interfaces>
+            <inventory_mode>DISABLED</inventory_mode>
+        </host>
+        <host>
+            <host>AP110_MUELLE2_TOKIO</host>
+            <name>AP110_MUELLE2_TOKIO</name>
+            <templates>
+                <template>
+                    <name>ICMP Ping</name>
+                </template>
+            </templates>
+            <groups>
+                <group>
+                    <name>GRUPO DE APS TOKIO</name>
+                </group>
+            </groups>
+            <interfaces>
+                <interface>
+                    <type>SNMP</type>
+                    <ip>10.10.30.188</ip>
+                    <dns>AP110MUELLE2TOKIO</dns>
+                    <port>161</port>
+                    <details>
+                        <community>public</community>
+                    </details>
+                    <interface_ref>if1</interface_ref>
+                </interface>
+            </interfaces>
+            <inventory_mode>DISABLED</inventory_mode>
+        </host>
+        <host>
+            <host>AP111_MUELLE3_TOKIO</host>
+            <name>AP111_MUELLE3_TOKIO</name>
+            <templates>
+                <template>
+                    <name>ICMP Ping</name>
+                </template>
+            </templates>
+            <groups>
+                <group>
+                    <name>GRUPO DE APS TOKIO</name>
+                </group>
+            </groups>
+            <interfaces>
+                <interface>
+                    <type>SNMP</type>
+                    <ip>10.10.30.189</ip>
+                    <dns>AP111MUELLE3TOKIO</dns>
+                    <port>161</port>
+                    <details>
+                        <community>public</community>
+                    </details>
+                    <interface_ref>if1</interface_ref>
+                </interface>
+            </interfaces>
+            <inventory_mode>DISABLED</inventory_mode>
+        </host>
+        <host>
+            <host>AP112_MUELLE4_TOKIO</host>
+            <name>AP112_MUELLE4_TOKIO</name>
+            <templates>
+                <template>
+                    <name>ICMP Ping</name>
+                </template>
+            </templates>
+            <groups>
+                <group>
+                    <name>GRUPO DE APS TOKIO</name>
+                </group>
+            </groups>
+            <interfaces>
+                <interface>
+                    <type>SNMP</type>
+                    <ip>10.10.30.190</ip>
+                    <dns>AP112MUELLE4TOKIO</dns>
+                    <port>161</port>
+                    <details>
+                        <community>public</community>
+                    </details>
+                    <interface_ref>if1</interface_ref>
+                </interface>
+            </interfaces>
+            <inventory_mode>DISABLED</inventory_mode>
+        </host>
+        <host>
+            <host>AP113_MUELLE5_TOKIO</host>
+            <name>AP113_MUELLE5_TOKIO</name>
+            <templates>
+                <template>
+                    <name>ICMP Ping</name>
+                </template>
+            </templates>
+            <groups>
+                <group>
+                    <name>GRUPO DE APS TOKIO</name>
+                </group>
+            </groups>
+            <interfaces>
+                <interface>
+                    <type>SNMP</type>
+                    <ip>10.10.30.191</ip>
+                    <dns>AP113MUELLE5TOKIO</dns>
+                    <port>161</port>
+                    <details>
+                        <community>public</community>
+                    </details>
+                    <interface_ref>if1</interface_ref>
+                </interface>
+            </interfaces>
+            <inventory_mode>DISABLED</inventory_mode>
+        </host>
+        <host>
+            <host>AP114_MUELLE6_TOKIO</host>
+            <name>AP114_MUELLE6_TOKIO</name>
+            <templates>
+                <template>
+                    <name>ICMP Ping</name>
+                </template>
+            </templates>
+            <groups>
+                <group>
+                    <name>GRUPO DE APS TOKIO</name>
+                </group>
+            </groups>
+            <interfaces>
+                <interface>
+                    <type>SNMP</type>
+                    <ip>10.10.30.192</ip>
+                    <dns>AP114MUELLE6TOKIO</dns>
+                    <port>161</port>
+                    <details>
+                        <community>public</community>
+                    </details>
+                    <interface_ref>if1</interface_ref>
+                </interface>
+            </interfaces>
+            <inventory_mode>DISABLED</inventory_mode>
+        </host>
+
+    </hosts>
+</zabbix_export>
