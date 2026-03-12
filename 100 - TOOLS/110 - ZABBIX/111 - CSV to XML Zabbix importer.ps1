@@ -3,6 +3,7 @@
 #  - IP address
 #  - Grupo al que se añadirá en Zabbix (ha de existir en Zabbix)
 #  - Plantilla a aplicar en Zabbix (ha de existir en Zabbix)
+# Ver XML de ejemplo también (fichero '111 - CSV to XML Zabbix importer.xml')
 
 # Importar CSV
 try {
