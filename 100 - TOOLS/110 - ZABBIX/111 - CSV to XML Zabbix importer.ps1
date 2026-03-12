@@ -1,4 +1,4 @@
-# Revisa el CSV para que tenga 4 campos (ver fichero 111 - CSV to XML Zabbix importer.csv):
+# Revisa el CSV para que tenga 4 campos (ver fichero '111 - CSV to XML Zabbix importer.csv'):
 #  - Nombre del equipo
 #  - IP address
 #  - Grupo al que se añadirá en Zabbix (ha de existir en Zabbix)
