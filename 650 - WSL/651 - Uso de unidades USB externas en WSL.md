@@ -7,7 +7,7 @@
 ### Instalar USBIPD
 Descargamos el MSI deseado de https://github.com/dorssel/usbipd-win/releases y lo instalamos
 
-### Configuraciones en powershell :poweshell:
+### Configuraciones en powershell :powershell:
 + Abrimos Powershell como administrador
 + Conectamos el dispositivo USB
 + Para listar todos los dispoitivos disponibles en Windows, ejecutamos:
