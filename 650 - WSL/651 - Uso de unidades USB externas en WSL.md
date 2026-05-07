@@ -7,7 +7,7 @@
 ### Instalar USBIPD
 Descargamos el MSI deseado de https://github.com/dorssel/usbipd-win/releases y lo instalamos
 
-### Configuraciones en powershell
+### Configuraciones en powershell :poweshell:
 + Abrimos Powershell como administrador
 + Conectamos el dispositivo USB
 + Para listar todos los dispoitivos disponibles en Windows, ejecutamos:
@@ -36,7 +36,15 @@ Ej: usbipd attach --wsl --busid 2-4
 ```
 lsusb
 ```
-### Desconexión del doispositivo externo del WSL
+
++ El disco será accesible desde las distintas aplicaiones qu etengamos instalados en nuestro WSL, como por ejemplo "photorec":
+```
+mkdir /home/usuario/voy_a_recuperar_datos
+sudo photorec
+lsusb
+```
+ 
+### Desconexión del dispositivo externo del WSL
 + Si queremos desconectar el dispositivo del WSl, podemos hacerlo con el comando "detach":
 ```
 usbipd detach --busid <busid>
